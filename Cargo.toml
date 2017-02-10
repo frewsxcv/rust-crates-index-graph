@@ -1,0 +1,6 @@
+[package]
+name = "rust-crates-index-graph"
+version = "0.1.0"
+authors = ["Corey Farwell <coreyf@rwell.org>"]
+
+[dependencies]
