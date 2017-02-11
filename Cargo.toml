@@ -3,6 +3,10 @@ name = "rust-crates-index-graph"
 version = "0.1.0"
 authors = ["Corey Farwell <coreyf@rwell.org>"]
 
+[[bin]]
+name = "crates-index-graph"
+path = "main.rs"
+
 [dependencies]
 crates-index = "0.6"
 petgraph = "0.4"
