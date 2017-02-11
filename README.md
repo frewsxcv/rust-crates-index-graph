@@ -1,6 +1,6 @@
 # rust-crates-index-graph
 
-Generate a [DOT file](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) of Rust's crates.io ecosystem. Nodes
+Generate a [DOT file](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) of Rust's crates.io ecosystem. Nodes are packages. Edges are dependencies.
 
 ## License
 
