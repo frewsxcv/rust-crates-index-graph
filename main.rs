@@ -9,7 +9,7 @@ fn main() {
 
     let index = crates_index::Index::new("_index".into());
     if !index.exists() {
-        index.fetch().expect("Could not fetch crates.io index");
+        index.retrieve().expect("Could not fetch crates.io index");
     }
     for crate_ in index.crates() {
         let latest_version = crate_.latest_version();
@@ -19,8 +19,11 @@ fn main() {
     for crate_ in index.crates() {
         let latest_version = crate_.latest_version();
         for dependency in latest_version.dependencies() {
-            let from = name_to_nodes.get(latest_version.name()).unwrap();
-            let to = name_to_nodes.get(dependency.name()).unwrap();
+            let from = name_to_nodes.get(latest_version.name()).expect("could not get latest version");
+            let to = match name_to_nodes.get(dependency.name()) {
+                Some(n) => n,
+                None => return,
+            };
             graph.add_edge(*from, *to, ());
         }
     }

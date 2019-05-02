@@ -8,5 +8,5 @@ name = "crates-index-graph"
 path = "main.rs"
 
 [dependencies]
-crates-index = "0.6"
+crates-index = "0.7"
 petgraph = "0.4"
